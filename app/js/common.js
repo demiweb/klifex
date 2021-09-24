@@ -347,6 +347,7 @@ function rowSlider() {
     } else {
         prodRow.forEach((sld) => {
             let sldCont = sld.querySelector('.row-items__container');
+            let pagin = sld.querySelector('.dots');
             let sldNext = sld.querySelector('.slider-btn--next');
             let sldPrev = sld.querySelector('.slider-btn--prev');
             const swiper2 = new Swiper(sldCont, {
@@ -362,7 +363,17 @@ function rowSlider() {
                     prevEl: sldPrev,
                 },
                 spaceBetween: 10,
+                pagination: {
+                    el: pagin,
+                    type: 'bullets',
+                    bulletActiveClass: 'active',
+                    bulletClass: 'single-dot',
+                    bulletElement: 'div',
+                    clickable: true,
+                    currentClass: 'current',
 
+
+                },
                 breakpoints: {
                     // when window width is >= 320px
 
@@ -400,6 +411,80 @@ function rowSlider() {
     }
 }
 rowSlider();
+
+
+let brandsSlides = [...document.querySelectorAll('.js-slider.our-brands')];
+
+function brandSlider() {
+    if (!brandsSlides.length) {
+
+    } else {
+        brandsSlides.forEach((sld) => {
+            let sldCont = sld.querySelector('.brands-list');
+            let pagin = sld.querySelector('.dots');
+            let sldNext = sld.querySelector('.slider-btn--next');
+            let sldPrev = sld.querySelector('.slider-btn--prev');
+            const swiper2 = new Swiper(sldCont, {
+                // Optional parameters
+                loop: false,
+                slidesPerView:2,
+                slidesPerGroup: 1,
+                speed: 660,
+                simulateTouch: true,
+                draggable: true,
+                freeMode: true,
+                spaceBetween: 18,
+                navigation: {
+                    nextEl: sldNext,
+                    prevEl: sldPrev,
+                },
+
+                pagination: {
+                    el: pagin,
+                    type: 'bullets',
+                    bulletActiveClass: 'active',
+                    bulletClass: 'single-dot',
+                    bulletElement: 'div',
+                    clickable: true,
+                    currentClass: 'current',
+
+                },
+                breakpoints: {
+                    // when window width is >= 320px
+
+                    // when window width is >= 480px
+                    600: {
+                        draggable: true,
+                        simulateTouch: true,
+                        slidesPerView: 4,
+                        slidesPerGroup: 2,
+                        spaceBetween: 18,
+                        autoplay: {
+                            delay: 5000,
+                            pauseOnMouseEnter: true,
+                        },
+                        freeMode:false,
+
+                    },
+                    // when window width is >= 640px
+                    900: {
+                        slidesPerView: 5,
+                        slidesPerGroup: 2,
+                        spaceBetween: 42,
+                        freeMode:false,
+
+                    },
+                    1300: {
+                        slidesPerView: 6,
+                        slidesPerGroup: 2,
+                        freeMode:false,
+                    }
+                }
+            });
+        })
+    }
+}
+brandSlider();
 
 //sliders
 
