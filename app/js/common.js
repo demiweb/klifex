@@ -514,6 +514,9 @@ function addFav() {
 addFav();
 
 
+$('.sort-select').niceSelect();
+
+
 
 
 
