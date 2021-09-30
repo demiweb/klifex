@@ -517,6 +517,98 @@ addFav();
 $('.sort-select').niceSelect();
 
 
+let modalWindows = [...document.querySelectorAll('.modal-window')];
+
+function modalControl() {
+    if (!modalWindows.length) {
+
+    } else {
+        modalWindows.forEach((mdl) => {
+            mdl.addEventListener('click', () => {
+                document.body.classList.remove('no-scroll');
+                mdl.classList.remove('active');
+            });
+            mdl.querySelector('.modal-container').addEventListener('click', (e) => {
+                e.stopPropagation();
+
+            });
+            mdl.querySelector('.close-modal').addEventListener('click', () => {
+                mdl.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            })
+
+        })
+    }
+}
+modalControl();
+
+let cartIcon = [...document.querySelectorAll('.cart')];
+
+function openCart() {
+    if (!cartIcon.length) {
+
+    } else {
+        cartIcon.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelector('.modal-window--cart').classList.add('active');
+                document.body.classList.add('no-scroll');
+
+            })
+        })
+    }
+}
+
+openCart();
+
+let passWordInput = [...document.querySelectorAll('.password')];
+
+function showPassword() {
+    if (!passWordInput.length) {
+
+    } else {
+        passWordInput.forEach((btn) => {
+            let icon = btn.querySelector('.icon');
+            icon.addEventListener('click', () => {
+                btn.classList.toggle('show-pass');
+                if (btn.classList.contains('show-pass')) {
+                    btn.querySelector('input').type = 'text';
+                } else {
+                    btn.querySelector('input').type = 'password';
+
+                }
+            })
+        })
+    }
+}
+showPassword();
 
 
+let openModAccMenu = [...document.querySelectorAll('.acc-current')];
 
+function openAccMenu() {
+    if (!openModAccMenu.length) {
+
+    } else {
+        openModAccMenu.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.account-list').classList.toggle('open');
+            })
+        })
+    }
+}
+openAccMenu();
+
+let redactInput = [...document.querySelectorAll('.account-redact .line p')];
+function openRedactInput() {
+    if (!redactInput.length) {
+
+    } else {
+        redactInput.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.line').querySelector('.input-cont').classList.toggle('disabled');
+            })
+        })
+    }
+}
+openRedactInput();
