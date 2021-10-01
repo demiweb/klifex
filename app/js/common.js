@@ -612,3 +612,36 @@ function openRedactInput() {
     }
 }
 openRedactInput();
+
+
+let orderDetails = [...document.querySelectorAll('.acc-order__top')];
+
+function openOrderDetails() {
+    if (!orderDetails.length) {
+
+    } else {
+        orderDetails.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.acc-order').classList.toggle('active');
+            })
+        })
+    }
+}
+openOrderDetails();
+
+let btnOpenComment = [...document.querySelectorAll('.r-open')];
+
+function openCommentText() {
+    if (!btnOpenComment.length) {
+
+    } else {
+        btnOpenComment.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.acc-reviews__rev').classList.toggle('open');
+
+            })
+        })
+    }
+}
+
+openCommentText();
