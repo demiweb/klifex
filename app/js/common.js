@@ -487,7 +487,7 @@ function brandSlider() {
 brandSlider();
 
 
-let cardPhotosBlock = [...document.querySelectorAll('.card-slider')];
+let cardPhotosBlock = [...document.querySelectorAll('.card-slider-2')];
 function startPhotosSlider() {
     if (!cardPhotosBlock.length) {
 
@@ -533,6 +533,36 @@ function startPhotosSlider() {
     }
 }
 startPhotosSlider();
+
+let cardPhotosBlock1 = [...document.querySelectorAll('.card-slider-1')];
+function startPhotosSlider2() {
+    if (!cardPhotosBlock1.length) {
+
+    } else {
+        cardPhotosBlock1.forEach((blc) => {
+            let mainSlides = blc.querySelector('.card-slider__container');
+            let thumbsSlides = blc.querySelector('.card-slider__thumbs');
+
+            var swiperThumb = new Swiper(thumbsSlides, {
+                spaceBetween: 5,
+                slidesPerView: 3,
+                freeMode: true,
+                watchSlidesProgress: true,
+                direction: 'vertical',
+                centeredSlides: true,
+                loop: true,
+            });
+            var swiper2 = new Swiper(mainSlides, {
+                spaceBetween: 10,
+                slidesPerView: 1,
+                thumbs: {
+                    swiper: swiperThumb,
+                },
+            });
+        })
+    }
+}
+startPhotosSlider2();
 
 //sliders
 
