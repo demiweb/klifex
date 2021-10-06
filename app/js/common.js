@@ -55,6 +55,40 @@ function allLozadImg() {
 
 allLozadImg();
 
+let allImge = [...document.querySelectorAll('.text-block img')];
+
+function allImageImg() {
+    allImge.forEach((el) => {
+        console.log('hello')
+        el.addEventListener('load', () => {
+            el.closest('.text-block').classList.add('is-loaded')
+        })
+        // if (el.loaded()) {
+        //     el.classList.add('is-loaded');
+        // }
+    })
+}
+
+allImageImg();
+
+let allHeroImgBefore = [...document.querySelectorAll('.hero-bg img')];
+
+function addShadowBefore() {
+    if (!allHeroImgBefore.length) {
+
+    } else {
+        allHeroImgBefore.forEach((el) => {
+            console.log('hello')
+            el.addEventListener('load', () => {
+                el.closest('.hero-bg').classList.add('loaded-img')
+            })
+
+        })
+    }
+}
+
+addShadowBefore();
+
 
 
 
@@ -817,3 +851,65 @@ function changeCheckoutHead() {
 changeLoginTabCheckout();
 changeCheckoutHead();
 //checkout
+
+let startsRateModal = [...document.querySelectorAll('.rate-stars .rate')];
+
+function hoverStarsRate() {
+    if (!startsRateModal.length) {
+
+    } else {
+        startsRateModal.forEach((st, k) => {
+            let number = k + 1;
+            st.addEventListener('mouseover', () => {
+                st.classList.add('hover');
+                for (let i = 0; i < k; i++) {
+                    startsRateModal[i].classList.add('hover');
+                }
+            })
+            st.addEventListener('mouseout', () => {
+                st.classList.remove('hover');
+                for (let i = 0; i < k; i++) {
+                    startsRateModal[i].classList.remove('hover');
+                }
+            })
+            st.addEventListener('click', () => {
+                startsRateModal.forEach((st2) => {
+                    st2.classList.remove('clicked');
+                })
+                st.classList.add('clicked');
+                st.closest('.rate-list').querySelector('p strong').innerHTML = number;
+                for (let i = 0; i < k; i++) {
+                    startsRateModal[i].classList.add('clicked');
+                }
+            })
+        })
+    }
+}
+
+hoverStarsRate();
+
+
+let btnsItem = [...document.querySelectorAll('.prod-info__buttons .btn')];
+
+function btnModals() {
+    if (!btnsItem.length) {
+
+    } else {
+        btnsItem.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('go-share')) {
+                    document.querySelector('.modal-window--share').classList.add('active');
+                    document.body.classList.add('no-scroll');
+                } else if(btn.classList.contains('go-question')) {
+                    document.querySelector('.modal-window--quest').classList.add('active');
+                    document.body.classList.add('no-scroll');
+                } else if(btn.classList.contains('go-comment')) {
+                    document.querySelector('.modal-window--comment').classList.add('active');
+                    document.body.classList.add('no-scroll');
+                }
+            })
+        })
+    }
+}
+
+btnModals();

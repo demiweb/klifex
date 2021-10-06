@@ -90,6 +90,13 @@
 }
 
 @media screen and (max-width: 1400px) {
+  .thanks-info__block {
+    width: 45%;
+    padding-left: 30px;
+  }
+  .checkout-thanks {
+    padding: 40px 0 80px;
+  }
   .checkout-order {
     padding-left: 40px;
   }
@@ -258,6 +265,7 @@
   }
   .acc-order__line div:not(.o-img) a {
     font-size: 12px;
+    line-height: 1.3;
   }
   .account-favs {
     row-gap: 10px;
@@ -421,6 +429,10 @@
 }
 
 @media screen and (max-width: 1100px) {
+  .thanks-table {
+    margin-top: 25px;
+    padding: 31px 24px;
+  }
   .checkout-order {
     padding-left: 20px;
   }
@@ -712,6 +724,16 @@
 }
 
 @media screen and (max-width: 992px) {
+  .thanks-info {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .thanks-info__block {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 80px;
+  }
   .checkout {
     flex-direction: column;
     align-items: flex-start;
@@ -863,7 +885,8 @@
   .footer-logo {
     order: 1;
     margin: 0;
-    margin-left: -10px;
+    //margin-left: -10px;
+    margin-right: 10px;
   }
   .pay-cards {
     order: 3;
@@ -1076,6 +1099,7 @@
     left: -35px;
     right: -35px;
     background: #fff;
+    width: auto;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -1218,6 +1242,75 @@
 }
 
 @media screen and (max-width: 769px) {
+  .text-block {
+    img {
+      width: 100% !important;
+    }
+    .container {
+
+    }
+  }
+  .set-rate {
+    margin-top: 10px;
+  }
+  .modal-comment {
+    flex-direction: column;
+    align-items: flex-start;
+    .top {
+      margin-bottom: 22px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .form {
+      form {
+        .input-cont {
+          margin-bottom: 13px;
+        }
+        textarea {
+          min-height: 120px;
+        }
+      }
+    }
+    .bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      .left {
+        margin-bottom: 0;
+      }
+    }
+    .right {
+      width: 100%;
+      padding-left: 0;
+    }
+    .left {
+      width: 100%;
+      justify-content: center;
+      padding-right: 0;
+      margin-bottom: 10px;
+      > p {
+        font-size: 22px;
+        text-align: center;
+        line-height: 1.1;
+      }
+    }
+  }
+  .thanks-info__block {
+    margin-top: 45px;
+  }
+  .thanks-block {
+    margin-bottom: 45px;
+  }
+  .thanks-block {
+    span {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    .img {
+      margin-bottom: 8px;
+    }
+  }
   .account {
     padding: 30px 0;
   }
@@ -1244,7 +1337,11 @@
     max-height: 0;
     overflow: hidden;
     padding-top: 0;
+    margin-top: 0;
     transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease, padding-top 0.3s ease;
+    button {
+      margin-left: -4px;
+    }
     a {
       &.active {
         display: none;
@@ -1260,6 +1357,8 @@
       .acc-list {
         opacity: 1;
         padding-top: 13px;
+        margin-top: 13px;
+        border-top: 1px dashed #c3ccd1;
         visibility: visible;
         max-height: 700px;
       }
@@ -1430,6 +1529,7 @@
 
   }
   .category-content #column-left {
+    filter: none !important;
     position: fixed !important;
     top: 0 !important;
     bottom: 0 !important;
@@ -1438,6 +1538,18 @@
 
   }
   .category-content {
+    .ocf-selected .ocf-value-input::before {
+      background-color: #fff;
+    }
+    .ocf-body > .ocf-filter-list {
+      width: calc(100% + 6px);
+      padding-right: 6px;
+      box-sizing: border-box;
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+    }
     .ocf-theme-light-block .ocf-filter {
       padding: 12px 0 0 !important;
       margin: 14px 0 0;
@@ -1494,8 +1606,70 @@
 
 
 }
+@media screen and (max-width: 720px) {
+  .modal-container {
+    width: 100%;
+  }
+  .modal-share p {
+    font-size: 20px;
+    line-height: 36px;
+  }
+  .modal-share ul {
+    margin: 26px 0;
+  }
+  .modal-share ul li a {
+    width: 45px;
+    height: 45px;
+  }
+  .copy-link {
+    margin-bottom: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
 
+    .input-cont {
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 5px;
+      min-width: 0;
+    }
+    .btn {
+      width: 100%;
+      height: 54px;
+    }
+  }
+}
 @media screen and (max-width: 640px) {
+  .bottom-footer__row .copyright {
+    width: 100%;
+  }
+  .modal-comment {
+    margin-bottom: 25px;
+  }
+  .checkout-order__content {
+    padding-right: 6px;
+    width: calc(100% + 6px);
+    margin-right: -6px;
+  }
+  .checkout-order__footer {
+    box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    margin-top: 0;
+    padding: 19px;
+    box-sizing: border-box;
+    align-items: center;
+    .total {
+      flex-direction: column;
+      align-items: center;
+    }
+    .buttons {
+      width: 100%;
+      .btn {
+        width: 100%;
+      }
+    }
+  }
   .checkout-order__footer .buttons {
     flex-direction: column;
     .btn {
@@ -1767,6 +1941,27 @@
 }
 
 @media screen and (max-width: 600px) {
+  .modal-comment .left > p {
+    font-size: 16px;
+  }
+  .modal-comment {
+    .item {
+      .img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  .thanks-table__line {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+    padding-top: 12px;
+    .right {
+      margin-left: 0;
+    }
+  }
   .row-items .row-items__container:not(.swiper-container) {
     row-gap: 20px;
     column-gap: 20px;
@@ -1854,11 +2049,12 @@
   }
   .hero-title {
     font-size: 26px;
-    line-height: 40px;
+    line-height: 1.2;
   }
   .blog {
     .blog-container {
       row-gap: 30px;
+      margin-top: 30px;
     }
   }
   .footer-row {
@@ -2038,6 +2234,26 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .item-tab:not(.reviews) .brands {
+    row-gap: 20px;
+    column-gap: 20px;
+    .single-brand {
+      width: calc(50% - 10px);
+    }
+  }
+  .modal-share ul {
+    li {
+      a {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+  .modal-share p {
+    font-size: 17px;
+    line-height: 22px;
+
+  }
   .checkout-step__tabs-head {
     flex-direction: column;
     align-items: flex-start;
