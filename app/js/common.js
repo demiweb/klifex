@@ -899,7 +899,7 @@ function btnModals() {
 
 btnModals();
 
-let oneClick = [...document.querySelectorAll('.prod-info__buy')];
+let oneClick = [...document.querySelectorAll('.prod-info__buy a')];
 
 function btnModalsOne() {
     if (!oneClick.length) {
