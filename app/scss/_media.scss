@@ -766,6 +766,7 @@
     flex-wrap: nowrap;
     row-gap: 14px;
     column-gap: 14px;
+    overflow: hidden;
     iframe, video {
       width: 80%;
       flex-shrink: 0;
@@ -2234,6 +2235,9 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .item-tab:not(.reviews) .videos iframe, .item-tab:not(.reviews) .videos video {
+    height: 175px;
+  }
   .item-tab:not(.reviews) .brands {
     row-gap: 20px;
     column-gap: 20px;
