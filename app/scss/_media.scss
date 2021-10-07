@@ -766,7 +766,7 @@
     flex-wrap: nowrap;
     row-gap: 14px;
     column-gap: 14px;
-    overflow: hidden;
+    overflow-x: auto;
     iframe, video {
       width: 80%;
       flex-shrink: 0;
@@ -1243,6 +1243,12 @@
 }
 
 @media screen and (max-width: 769px) {
+  .item-tab:not(.reviews) .videos {
+    flex-wrap: wrap;
+    iframe, video {
+      width: 100%;
+    }
+  }
   .text-block {
     img {
       width: 100% !important;
